@@ -21,11 +21,13 @@ From the coefficients, we can see that UNEMPC (unemployment rate) has a positive
 
 On the other hand, we can see that CBR (Bank of Canada's policy interest rate) has a negative coefficient of -1.35, implying that there is an inverse relationship between inflation and the policy interest rate. CIR (inflation expectations implied by bond yields) has a positive coefficient of 0.03, suggesting that there is a positive relationship between inflation and inflation expectations.
 
-# MSC       1.594357e-11
-# RGDP      5.717480e-04
-# TSX       6.188484e-04
-# IRGDP     6.736992e-04
-# SRGDP     7.411693e-04
+```
+MSC       1.594357e-11
+RGDP      5.717480e-04
+TSX       6.188484e-04
+IRGDP     6.736992e-04
+SRGDP     7.411693e-04
+```
 
 The coefficients for the other independent variables (MSC, RGDP, TSX, IRGDP, SRGDP) are relatively small compared to the other variables. Therefore, they may not have a significant impact on inflation.
 
