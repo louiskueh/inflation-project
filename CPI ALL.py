@@ -27,17 +27,17 @@ print(sorted_params)
 
 print(sorted_params_abs)
 # Results
-# CBR      -1.353645e+00
-# BLIC     -4.828265e-02
-# TSX      -6.188484e-04
-# RGDP     -5.717480e-04
+# const     2.614972e+01
+# UNEMPC    5.731830e-01
+# CEIR      1.394406e-01
 # MSC       1.594357e-11
+# TSX      -6.188484e-04
+# BLIC     -4.828265e-02
+# RGDP     -5.717480e-04
 # IRGDP     6.736992e-04
 # SRGDP     7.411693e-04
+# CBR      -1.353645e+00
 # CIR       2.964797e-02
-# CEIR      1.394406e-01
-# UNEMPC    5.731830e-01
-# const     2.614972e+01
 
 # sorted abs
 # MSC       1.594357e-11
