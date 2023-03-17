@@ -20,11 +20,12 @@ model = sm.OLS(y, X).fit()
 # print the beta values
 print(model.params)
 
-sorted_params = model.params.abs().sort_values()
-
+sorted_params_abs = model.params.abs().sort_values()
+sorted_params = model.params.sort_values()
 # print the sorted beta values
 print(sorted_params)
 
+print(sorted_params_abs)
 # Results
 # CBR      -1.353645e+00
 # BLIC     -4.828265e-02
