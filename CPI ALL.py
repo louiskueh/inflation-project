@@ -17,8 +17,20 @@ X = sm.add_constant(X)
 # fit the OLS regression model
 model = sm.OLS(y, X).fit()
 
-# print the beta values
-# print(model.params)
+mse = model.mse_resid
+rmse = mse ** 0.5
+print("MSE:", mse)
+print("RMSE:", rmse)
+
+# # Print F-statistic and p-value
+# f_statistic, p_value = sm.stats.anova_lm(model, typ=2)["F"]["x1"]
+# print("F-statistic:", f_statistic)
+# print("p-value:", p_value)
+
+# # Print Jarque-Bera test statistic and p-value (tests for normality of residuals)
+# jb_statistic, jb_p_value, _, _ = sm.stats.stattools.jarque_bera(model.resid)
+# print("Jarque-Bera statistic:", jb_statistic)
+# print("p-value:", jb_p_value)
 
 # sorted_params_abs = model.params.abs().sort_values()
 sorted_params = model.params.sort_values()
