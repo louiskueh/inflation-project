@@ -51,6 +51,8 @@ CIR         0.633087
 const     135.837568
 ```
 
+Biggest factor that affects inflation is CBR, the Bank of Canada's policy interest rate. As the interest rate increases inflation decreases by a factor of 6.7 per percent increase in of the Bank of Canada Rate.
+
 ## Summary for all vs 'UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR'
 
 ```
