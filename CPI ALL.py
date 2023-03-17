@@ -7,7 +7,7 @@ df = pd.read_excel('projectdata_FW2022.xlsx')
 df.dropna(inplace=True)
 
 # set the independent and dependent variables
-X = df[['UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
+X = df[['UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR']]
 # assuming CPICANALL represents inflation
 y = df['CPICANALL']
 
@@ -18,14 +18,14 @@ X = sm.add_constant(X)
 model = sm.OLS(y, X).fit()
 
 # print the beta values
-print(model.params)
+# print(model.params)
 
-sorted_params_abs = model.params.abs().sort_values()
+# sorted_params_abs = model.params.abs().sort_values()
 sorted_params = model.params.sort_values()
 # print the sorted beta values
 print(sorted_params)
-
-print(sorted_params_abs)
+print(model.summary())
+# print(sorted_params_abs)
 # Results
 # const     2.614972e+01
 # UNEMPC    5.731830e-01
