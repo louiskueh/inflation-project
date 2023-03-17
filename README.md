@@ -51,7 +51,13 @@ CIR         0.633087
 const     135.837568
 ```
 
-## Summary
+## Summary for all vs 'UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR'
+
+```
+X = df[['UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR']]
+# assuming CPICANALL represents inflation
+y = df['CPICANALL']
+```
 
 ```
                             OLS Regression Results                           
