@@ -29,6 +29,22 @@ IRGDP     6.736992e-04
 SRGDP     7.411693e-04
 ```
 
+
 The coefficients for the other independent variables (MSC, RGDP, TSX, IRGDP, SRGDP) are relatively small compared to the other variables. Therefore, they may not have a significant impact on inflation.
 
 Based on these results, we can conclude that the unemployment rate, consumer expectations, policy interest rate, and inflation expectations are important factors to consider when predicting inflation. However, we should keep in mind that these results are based on a specific dataset and should be interpreted accordingly.
+
+The values sorted (absolute)
+```
+MSC       1.594357e-11
+RGDP      5.717480e-04
+TSX       6.188484e-04
+IRGDP     6.736992e-04
+SRGDP     7.411693e-04
+CIR       2.964797e-02
+BLIC      4.828265e-02
+CEIR      1.394406e-01
+UNEMPC    5.731830e-01
+CBR       1.353645e+00
+const     2.614972e+01
+```
