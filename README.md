@@ -104,6 +104,14 @@ CBR      0.102002 -0.077058  0.002339 -0.003310  0.164940 -0.128937
 CIR      0.028573  0.050061 -0.002703  0.003739 -0.128937  0.111459
 ```
 
+The variance of UNEMPC is 0.084505, and the covariances between UNEMPC and the other variables are all negative, indicating that UNEMPC tends to move in the opposite direction of the other variables.
+
+The variances of CEIR, BLIC, CBR, and CIR are all relatively small, ranging from 0.001185 to 0.001794.
+
+
+There are some relatively large covariances between certain variables, such as the negative covariance between UNEMPC and CBR, and the positive covariance between BLIC and CIR. 
+
+These covariances suggest that there may be some linear dependence between these variables.
 
 ## Summary for all vs 'UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR'
 
