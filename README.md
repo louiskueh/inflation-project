@@ -115,6 +115,42 @@ These covariances suggest that there may be some linear dependence between these
 
 ## Summary for all vs 'UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR'
 
+## All variables summary
+```
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:              CPICANALL   R-squared:                       0.987
+Model:                            OLS   Adj. R-squared:                  0.987
+Method:                 Least Squares   F-statistic:                     3679.
+Date:                Mon, 20 Mar 2023   Prob (F-statistic):               0.00
+Time:                        19:26:52   Log-Likelihood:                -1254.2
+No. Observations:                 501   AIC:                             2530.
+Df Residuals:                     490   BIC:                             2577.
+Df Model:                          10
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         26.1497      5.916      4.420      0.000      14.527      37.773
+UNEMPC         0.5732      0.189      3.033      0.003       0.202       0.945
+CEIR           0.1394      0.026      5.357      0.000       0.088       0.191
+MSC         1.594e-11   1.63e-12      9.784      0.000    1.27e-11    1.91e-11
+TSX           -0.0006      0.000     -4.197      0.000      -0.001      -0.000
+BLIC          -0.0483      0.015     -3.278      0.001      -0.077      -0.019
+RGDP          -0.0006   5.93e-05     -9.639      0.000      -0.001      -0.000
+IRGDP          0.0007   5.84e-05     11.539      0.000       0.001       0.001
+SRGDP          0.0007   6.74e-05     10.993      0.000       0.001       0.001
+CBR           -1.3536      0.195     -6.943      0.000      -1.737      -0.971
+CIR            0.0296      0.147      0.201      0.841      -0.260       0.319
+==============================================================================
+Omnibus:                       15.107   Durbin-Watson:                   0.084
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               15.994
+Skew:                           0.437   Prob(JB):                     0.000336
+Kurtosis:                       2.955   Cond. No.                     2.61e+13
+==============================================================================
+```
+
+## Reduced variables summary
 ```
 X = df[['UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR']]
 # assuming CPICANALL represents inflation
