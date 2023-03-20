@@ -22,6 +22,16 @@ rmse = mse ** 0.5
 print("MSE:", mse)
 print("RMSE:", rmse)
 
+# Define the null hypothesis as all independent variables having a coefficient of 0
+null_hypothesis = 'MSC = RGDP = TSX = IRGDP = SRGDP = 0' 
+
+# Perform the F-test
+f_test = model.f_test(null_hypothesis)
+
+# Print the F-statistic and p-value
+print('F-statistic:', round(float(f_test.fvalue), 2))
+print('p-value:', round(float(f_test.pvalue), 2))
+
 # # Print F-statistic and p-value
 # f_statistic, p_value = sm.stats.anova_lm(model, typ=2)["F"]["x1"]
 # print("F-statistic:", f_statistic)

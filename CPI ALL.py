@@ -17,6 +17,10 @@ X = sm.add_constant(X)
 # fit the OLS regression model
 model = sm.OLS(y, X).fit()
 
+cov_matrix = model.cov_params()
+print("Covariance Matrix:")
+print(cov_matrix)
+
 mse = model.mse_resid
 rmse = mse ** 0.5
 print("MSE:", mse)
