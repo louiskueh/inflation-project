@@ -7,7 +7,7 @@ df = pd.read_excel('projectdata_FW2022.xlsx')
 df.dropna(inplace=True)
 
 # set the independent and dependent variables
-X = df[['UNEMPC', 'CEIR', 'BLIC', 'CBR', 'CIR']]
+X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR']]
 # assuming CPICANALL represents inflation
 y = df['CPICANALL']
 
