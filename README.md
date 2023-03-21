@@ -131,6 +131,6 @@ After removing CIR variable from the model, the adjusted R-squared slightly decr
 
 The coefficients of the remaining independent variables all remain statistically significant with p-values less than 0.05, except for the constant. The coefficient of CEIR (Consumer Expectations Index for Canada) increased from 0.103 to 0.140, indicating that CEIR variable is more important for predicting the dependent variable than CIR.
 
-The Durbin-Watson statistic of 0.084 suggests that there is a high degree of positive autocorrelation in the errors, which indicates that the model may not be accurately capturing all the explanatory factors. This may be due to omitted variables, time series trends, or other factors that influence the dependent variable over time.
+The Durbin-Watson statistic of 0.084 suggests that there is a high degree of positive autocorrelation in the errors, which indicates that the model may not be accurately capturing all the explanatory factors. However this is the same value as the previous table with the CIR vairable.
 
-Overall, the model without the CIR variable is still quite strong, but it may be worth considering adding additional variables or adjusting the model to better account for the positive autocorrelation in the errors.
+Overall, the model without the CIR variable is still quite strong and so we will omit the CIR variable.
