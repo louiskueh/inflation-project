@@ -126,7 +126,7 @@ Prob(Omnibus):                  0.000   Jarque-Bera (JB):               16.120
 Skew:                           0.439   Prob(JB):                     0.000316
 Kurtosis:                       2.962   Cond. No.                     2.58e+13
 ==============================================================================
-
+```
 After removing CIR variable from the model, the adjusted R-squared slightly decreased to 0.987 from the previous 0.988. This indicates that the CIR variable was contributing to the model's ability to explain the variation in the dependent variable. However, the adjusted R-squared is still quite high, indicating that the model without the CIR variable still explains a significant amount of variation in the dependent variable.
 
 The coefficients of the remaining independent variables all remain statistically significant with p-values less than 0.05, except for the constant. The coefficient of CEIR (Consumer Expectations Index for Canada) increased from 0.103 to 0.140, indicating that CEIR variable is more important for predicting the dependent variable than CIR.
