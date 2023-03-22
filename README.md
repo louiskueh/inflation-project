@@ -1,3 +1,9 @@
+ # Which dependant variable should we use
+
+ According to the Bureau of Labor Statistics (BLS), the CPI_ALL index is considered the most comprehensive measure of inflation. The CPI_ALL index includes prices for goods and services across a wide range of categories, including food, housing, transportation, medical care, recreation, education, and more. It also includes prices for both urban and rural areas, which can be important for accurately capturing the inflation experience of a broad range of households.
+
+ This makes it the best choice for estimating inflation in a post pandemic Canada.
+ 
  # CPI ALL
 
 ```
