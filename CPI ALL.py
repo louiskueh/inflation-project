@@ -7,7 +7,7 @@ df = pd.read_excel('projectdata_FW2022.xlsx')
 df.dropna(inplace=True)
 
 # set the independent and dependent variables
-X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR']]
+X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
 # assuming CPICANALL represents inflation
 y = df['CPICANALL']
 
@@ -41,6 +41,39 @@ sorted_params = model.params.sort_values()
 # print the sorted beta values
 print(sorted_params)
 print(model.summary())
+
+
+# Predicted values of the dependent variable
+y_pred = model.predict(X)
+
+# Mean of the dependent variable
+y_mean = np.mean(y)
+
+# Total Sum of Squares (TSS)
+TSS = np.sum((y - y_mean) ** 2)
+
+# Residual Sum of Squares (RSS) or Sum of Squared Residuals (SSR)
+SSR = np.sum((y - y_pred) ** 2)
+
+# Explained Sum of Squares (ESS)
+ESS = TSS - SSR
+
+# Degrees of Freedom
+n = len(y)
+k = len(X.columns)
+df_resid = n - k
+df_total = n - 1
+
+# Standard Error of Regression (SER)
+SER = np.sqrt(SSR / df_resid)
+
+# Print the results
+print("Sum of Squared Residuals (SSR): ", SSR)
+print("Total Sum of Squares (TSS): ", TSS)
+print("Explained Sum of Squares (ESS): ", ESS)
+print("Standard Error of Regression (SER): ", SER)
+
+
 # print(sorted_params_abs)
 # Results
 # const     2.614972e+01

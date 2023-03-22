@@ -88,7 +88,7 @@ Based on the p-values, we can conclude that all of the predictor variables excep
 
 
 ## Should we remove the CIR variable?
-```
+```python
 X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR']]
 # assuming CPICANALL represents inflation
 y = df['CPICANALL']
@@ -134,3 +134,90 @@ The coefficients of the remaining independent variables all remain statistically
 The Durbin-Watson statistic of 0.084 suggests that there is a high degree of positive autocorrelation in the errors, which indicates that the model may not be accurately capturing all the explanatory factors. However this is the same value as the previous table with the CIR vairable.
 
 Overall, the model without the CIR variable is still quite strong and so we will omit the CIR variable.
+
+
+## SSR, TSS, ESS and SER without CIR
+```python
+# Predicted values of the dependent variable
+y_pred = model.predict(X)
+
+# Mean of the dependent variable
+y_mean = np.mean(y)
+
+# Total Sum of Squares (TSS)
+TSS = np.sum((y - y_mean) ** 2)
+
+# Residual Sum of Squares (RSS) or Sum of Squared Residuals (SSR)
+SSR = np.sum((y - y_pred) ** 2)
+
+# Explained Sum of Squares (ESS)
+ESS = TSS - SSR
+
+# Degrees of Freedom
+n = len(y)
+k = len(X.columns)
+df_resid = n - k
+df_total = n - 1
+
+# Standard Error of Regression (SER)
+SER = np.sqrt(SSR / df_resid)
+
+# Print the results
+print("Sum of Squared Residuals (SSR): ", SSR)
+print("Total Sum of Squares (TSS): ", TSS)
+print("Explained Sum of Squares (ESS): ", ESS)
+print("Standard Error of Regression (SER): ", SER)# Predicted values of the dependent variable
+y_pred = model.predict(X)
+
+# Mean of the dependent variable
+y_mean = np.mean(y)
+
+# Total Sum of Squares (TSS)
+TSS = np.sum((y - y_mean) ** 2)
+
+# Residual Sum of Squares (RSS) or Sum of Squared Residuals (SSR)
+SSR = np.sum((y - y_pred) ** 2)
+
+# Explained Sum of Squares (ESS)
+ESS = TSS - SSR
+
+# Degrees of Freedom
+n = len(y)
+k = len(X.columns)
+df_resid = n - k
+df_total = n - 1
+
+# Standard Error of Regression (SER)
+SER = np.sqrt(SSR / df_resid)
+
+# Print the results
+print("Sum of Squared Residuals (SSR): ", SSR)
+print("Total Sum of Squares (TSS): ", TSS)
+print("Explained Sum of Squares (ESS): ", ESS)
+print("Standard Error of Regression (SER): ", SER)
+```
+```python
+Sum of Squared Residuals (SSR):  4383.62430958937
+Total Sum of Squares (TSS):  333456.92878243513
+Explained Sum of Squares (ESS):  329073.30447284575
+Standard Error of Regression (SER):  2.9879678295944188
+```
+
+## SSR, TSS, ESS and SER with CIR
+```python
+Sum of Squared Residuals (SSR):  4383.261921133992
+Total Sum of Squares (TSS):  333456.92878243513
+Explained Sum of Squares (ESS):  329073.6668613012
+Standard Error of Regression (SER):  2.9908915881573153
+```
+Comparing the two sets of statistics, we can see that including the variable CIR in the model has very little effect on the results:
+
+The SSR only changes slightly from 4383.62 to 4383.26 when adding CIR to the model. This suggests that the addition of CIR does not significantly affect the amount of unexplained variance in the model.
+
+The TSS remains the same, indicating that the total amount of variability in the dependent variable is not affected by adding CIR to the model.
+
+The ESS decreases slightly from 329073.30 to 329073.67 when adding CIR to the model. This indicates that the additional variable is explaining a small amount of additional variance in the dependent variable.
+
+The SER increases slightly from 2.988 to 2.991 when adding CIR to the model. This indicates that the inclusion of CIR has a small effect on the standard error of the regression, which is a measure of the accuracy of the model's predictions.
+
+Overall, it seems that the variable CIR has only a small effect on the model's performance. 
