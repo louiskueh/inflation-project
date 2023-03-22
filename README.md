@@ -84,8 +84,9 @@ The F-statistic of 3679 and its associated p-value of 0.00 indicate that at leas
 
 Looking at the individual predictor variables, all except "CIR" have a statistically significant impact on the dependent variable. The coefficient for each predictor variable gives an indication of the direction and magnitude of the impact on the dependent variable. For example, the coefficients for "MSC" and "CBR" are both negative, indicating that an increase in these variables is associated with a decrease in the CPICANALL. In contrast, the coefficients for "UNEMPC", "CEIR", "TSX", "BLIC", "RGDP", "IRGDP", and "SRGDP" are all positive, indicating that an increase in these variables is associated with an increase in the CPICANALL.
 
-Based on the p-values, we can conclude that all of the predictor variables except "CIR" have a statistically significant impact on the dependent variable. Therefore, it is advisable to keep all of these predictor variables except CIR in the model.
+Based on the p-value of the CIR variable in the model, which is 0.841, it appears that this variable is not statistically significant at the 5% level of significance. This means that the probability of observing such an extreme test statistic, assuming that the true coefficient of the CIR variable is zero, is 84.1%. This is a relatively high probability, and we cannot reject the null hypothesis that the coefficient of the CIR variable is equal to zero, and thus this variable does not have a significant effect on the dependent variable. Therefore, we might consider eliminating this variable from the model to simplify the model without compromising its predictive power.
 
+Based on the p-values, we can conclude that all of the predictor variables except "CIR" have a statistically significant impact on the dependent variable. 
 
 ## Should we remove the CIR variable?
 ```python
