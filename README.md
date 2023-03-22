@@ -222,3 +222,17 @@ The ESS decreases slightly from 329073.30 to 329073.67 when adding CIR to the mo
 The SER increases slightly from 2.988 to 2.991 when adding CIR to the model. This indicates that the inclusion of CIR has a small effect on the standard error of the regression, which is a measure of the accuracy of the model's predictions.
 
 Overall, it seems that the variable CIR has only a small effect on the model's performance. 
+
+
+# Residual E VS Y
+
+```python
+# plot residuals against predicted values
+fig, ax = plt.subplots()
+ax.scatter(model.predict(X), model.resid)
+ax.axhline(y=0, color='red', linestyle='--')
+ax.set_xlabel('Predicted Values')
+ax.set_ylabel('Residuals')
+plt.show()
+```
+![images/residual-e.png](images/residual-e.png)

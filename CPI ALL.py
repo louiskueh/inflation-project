@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 # Read the Excel file into a pandas dataframe
 df = pd.read_excel('projectdata_FW2022.xlsx')
@@ -74,7 +75,19 @@ print("Explained Sum of Squares (ESS): ", ESS)
 print("Standard Error of Regression (SER): ", SER)
 
 
-# print(sorted_params_abs)
+
+# plot residuals against predicted values
+fig, ax = plt.subplots()
+ax.scatter(model.predict(X), model.resid)
+ax.axhline(y=0, color='red', linestyle='--')
+ax.set_xlabel('Predicted Values')
+ax.set_ylabel('Residuals')
+plt.show()
+
+
+
+
+
 # Results
 # const     2.614972e+01
 # UNEMPC    5.731830e-01
