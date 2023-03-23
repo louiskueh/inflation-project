@@ -242,3 +242,11 @@ ax.set_ylabel('Residuals')
 plt.show()
 ```
 ![images/residual-e.png](images/residual-e.png)
+
+
+# Model is non linear and
+RGDP (real GDP) might have a non-linear relationship with inflation because it is often associated with changes in economic growth, which can affect inflation rates in different ways depending on the state of the economy.
+
+CBR (consumer borrowing rate) might have a non-linear relationship with inflation because changes in borrowing rates can affect consumer spending, which in turn can impact inflation in complex ways.
+
+IRGDP (inflation-adjusted real GDP) might have a non-linear relationship with inflation because it represents the GDP adjusted for inflation, which could be affected by other factors beyond just changes in economic growth.

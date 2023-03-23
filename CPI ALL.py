@@ -2,13 +2,24 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
+from statsmodels.stats.stattools import durbin_watson
 
 # Read the Excel file into a pandas dataframe
 df = pd.read_excel('projectdata_FW2022.xlsx')
+# pre pandemic
+df = df[df['year'] < '2020-03-01']
 df.dropna(inplace=True)
+# print(df)
 
 # set the independent and dependent variables
-X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
+# X = df[[ 'UNEMPC', 'CEIR', 'MSC', 'TSX', 'BLIC', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
+# Points that are linear
+X = df[[ 'MSC' ,'TSX', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
+X['log_MSC'] = np.log(X['MSC'])
+X['log_TSX'] = np.log(X['TSX'])
+
+X = X[[ 'MSC','log_MSC', 'log_TSX' ,'TSX', 'RGDP', 'IRGDP', 'SRGDP', 'CBR', 'CIR']]
+
 # assuming CPICANALL represents inflation
 y = df['CPICANALL']
 
@@ -76,17 +87,10 @@ print("Standard Error of Regression (SER): ", SER)
 
 
 
-# plot residuals against predicted values
-fig, ax = plt.subplots()
-ax.scatter(model.predict(X), model.resid)
-ax.axhline(y=0, color='red', linestyle='--')
-ax.set_xlabel('Predicted Values')
-ax.set_ylabel('Residuals')
+fig = plt.figure(figsize=(15,12))
+# plot the residual plot
+sm.graphics.plot_regress_exog(model, 'CIR', fig=plt.figure(figsize=(12,8)))
 plt.show()
-
-
-
-
 
 # Results
 # const     2.614972e+01
